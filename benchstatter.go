@@ -115,5 +115,5 @@ func (c *Statter) Run() error {
 	if err != nil {
 		return err
 	}
-	return c.Benchstat.Run(res.worktreeOutputFile, res.baseOutputFile)
+	return c.Benchstat.Run(res.baseOutputFile, res.worktreeOutputFile)
 }
