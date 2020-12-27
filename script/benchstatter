@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+workdir="$(pwd)"
+
+CDPATH="" cd -- "$(dirname -- "$(dirname -- "$0")")"
+bindir="$(pwd)/bin"
+mkdir -p bin
+go build -o bin/benchstatter ./cmd/benchstatter >/dev/null
+cd "$workdir"
+exec "$bindir/benchstatter" "$@"
